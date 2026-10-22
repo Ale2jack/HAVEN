@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#24583f">
+    <meta name="description" content="HAVEN: un espacio digital para el bienestar universitario.">
+    <title>HAVEN | Bienestar universitario</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    </head>
+    <body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+        <a href="#inicio" class="brand" data-page="inicio">
+            <span class="brand-icon">H</span>
+            <span>
+            <strong>HAVEN</strong>
+            <small>Tu espacio de bienestar</small>
+            </span>
+        </a>
+
+        <div class="side-label">MENÚ PRINCIPAL</div>
+
+        <nav class="nav-menu" aria-label="Navegación principal">
+            <button class="nav-link active" data-page="inicio">
+            <span>⌂</span> Inicio
+            </button>
+            <button class="nav-link" data-page="espacios">
+            <span>⌖</span> Espacios de descanso
+            </button>
+            <button class="nav-link" data-page="pausas">
+            <span>◷</span> Pausas activas
+            </button>
+            <button class="nav-link" data-page="actividades">
+            <span>✳</span> Actividades
+            </button>
+            <button class="nav-link" data-page="comunidad">
+            <span>♡</span> Comunidad
+            </button>
+            <button class="nav-link" data-page="bienestar">
+            <span>☼</span> Mi bienestar
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+            <span class="help-icon">🌱</span>
+            <strong>Un momento para ti</strong>
+            <p>Tu bienestar también merece un espacio en tu día.</p>
+            <button class="text-button" data-page="pausas">
+                Tomar una pausa →
+            </button>
+            </div>
+            <div class="sidebar-footer">HAVEN © 2026 · Versión demostrativa</div>
+        </div>
+        </aside>
+
+        <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu icon-button" id="menuToggle"
+            aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+            <div class="breadcrumb">
+            <span>HAVEN</span><span class="breadcrumb-separator">/</span>
+            <strong id="currentSection">Inicio</strong>
+            </div>
+
+            <div class="topbar-right">
+            <span class="status-dot"></span>
+            <span class="status-text">Tu espacio personal</span>
+            <div class="avatar">H</div>
+            </div>
+        </header>
+
+        <div class="page-container">
+
+            <!-- INICIO -->
+            <section class="page active" id="page-inicio">
+            <div class="welcome-banner">
+                <div class="welcome-copy">
+                <span class="eyebrow light">TU BIENESTAR, TU ESPACIO</span>
+                <h1>Un respiro en medio<br>de tu día.</h1>
+                <p>La universidad es parte de tu camino. Cuidarte también.</p>
+                <button class="button button-light" data-page="pausas">
+                    Encuentra tu momento <span>→</span>
+                </button>
+                </div>
+                <div class="welcome-art" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="art-circle circle-one"></div>
+                <div class="art-circle circle-two"></div>
+                <div class="plant">🌿</div>
+                <div class="art-caption">Respira.<br>Descansa. Continúa.</div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                <span class="eyebrow">TU ESPACIO PERSONAL</span>
+                <h2>Hola, estudiante 👋</h2>
+                <p>Pequeños momentos pueden hacer una gran diferencia.</p>
+                </div>
+                <div class="date-chip" id="todayDate">Hoy</div>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                <div class="stat-icon green-icon">⌖</div>
+                <div><span>Espacios disponibles</span><strong id="spaceCount">4</strong></div>
+                <small class="stat-note">Para explorar</small>
+                </article>
+                <article class="stat-card">
+                <div class="stat-icon yellow-icon">◷</div>
+                <div><span>Minutos de pausa</span><strong id="minutesCount">0</strong></div>
+                <small class="stat-note">Acumulados por ti</small>
+                </article>
+                <article class="stat-card">
+                <div class="stat-icon pink-icon">♡</div>
+                <div><span>Actividades inscritas</span><strong id="enrolledCount">0</strong></div>
+                <small class="stat-note">Tus actividades</small>
+                </article>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-column">
+                <div class="section-heading compact">
+                    <div>
+                    <span class="eyebrow">DESCUBRE HAVEN</span>
+                    <h2>¿Qué necesitas hoy?</h2>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <button class="feature-card feature-green" data-page="espacios">
+                    <span class="feature-emoji">🌳</span>
+                    <span class="feature-title">Un lugar para descansar</span>
+                    <span class="feature-desc">Explora espacios tranquilos.</span>
+                    <span class="feature-arrow">Explorar →</span>
+                    </button>
+                    <button class="feature-card feature-cream" data-page="pausas">
+                    <span class="feature-emoji">🧘</span>
+                    <span class="feature-title">Necesito desconectar</span>
+                    <span class="feature-desc">Regálate unos minutos.</span>
+                    <span class="feature-arrow">Respirar →</span>
+                    </button>
+                    <button class="feature-card feature-lilac" data-page="actividades">
+                    <span class="feature-emoji">🌼</span>
+                    <span class="feature-title">Quiero participar</span>
+                    <span class="feature-desc">Encuentra actividades.</span>
+                    <span class="feature-arrow">Descubrir →</span>
+                    </button>
+                    <button class="feature-card feature-pink" data-page="bienestar">
+                    <span class="feature-emoji">💚</span>
+                    <span class="feature-title">Quiero escucharme</span>
+                    <span class="feature-desc">Registra cómo te sientes.</span>
+                    <span class="feature-arrow">Mi bienestar →</span>
+                    </button>
+                </div>
+
+                <div class="section-heading compact section-spaced">
+                    <div>
+                    <span class="eyebrow">PARA TU DÍA</span>
+                    <h2>Actividades destacadas</h2>
+                    </div>
+                    <button class="text-button" data-page="actividades">Ver todas →</button>
+                </div>
+                <div class="event-list" id="homeEvents"></div>
+                </div>
+
+                <aside class="right-column">
+                <article class="panel mood-panel">
+                    <span class="eyebrow">UN MOMENTO PARA TI</span>
+                    <h3>¿Cómo te sientes hoy?</h3>
+                    <p>No hay respuestas correctas o incorrectas.</p>
+                    <div class="mood-options">
+                    <button class="mood-option" data-mood="Muy bien" aria-label="Muy bien">
+                        <span>😁</span><small>Muy bien</small>
+                    </button>
+                    <button class="mood-option" data-mood="Bien" aria-label="Bien">
+                        <span>🙂</span><small>Bien</small>
+                    </button>
+                    <button class="mood-option" data-mood="Regular" aria-label="Regular">
+                        <span>😐</span><small>Regular</small>
+                    </button>
+                    <button class="mood-option" data-mood="Triste" aria-label="Triste">
+                        <span>😔</span><small>Triste</small>
+                    </button>
+                    <button class="mood-option" data-mood="Estresado" aria-label="Estresado">
+                        <span>😣</span><small>Estresado</small>
+                    </button>
+                    </div>
+                    <p class="mood-feedback" id="homeMoodFeedback" aria-live="polite">
+                    Tómate un momento para escucharte.
+                    </p>
+                    <button class="button button-primary full-width" data-page="bienestar">
+                    Mi registro emocional
+                    </button>
+                </article>
+
+                <article class="quote-card">
+                    <span class="quote-mark">“</span>
+                    <p>No tienes que resolverlo todo hoy. A veces, avanzar también significa detenerse.</p>
+                    <span class="quote-author">UN RECORDATORIO DE HAVEN</span>
+                </article>
+                </aside>
+            </div>
+            </section>
+
+            <!-- ESPACIOS -->
+            <section class="page" id="page-espacios">
+            <div class="page-intro">
+                <span class="eyebrow">DESCUBRE TU CAMPUS</span>
+                <h1>Espacios de descanso</h1>
+                <p>Encuentra un lugar donde puedas desconectar, respirar y recuperar energía.</p>
+            </div>
+
+            <div class="notice">
+                <span>ⓘ</span>
+                <p>Los espacios y sus características son ejemplos demostrativos.
+                Confirma las ubicaciones y condiciones reales con tu universidad.</p>
+            </div>
+
+            <div class="toolbar">
+                <label class="search-box">
+                <span>⌕</span>
+                <input type="search" id="spaceSearch" placeholder="Buscar un espacio..."
+                    aria-label="Buscar espacios">
+                </label>
+                <select id="spaceFilter" aria-label="Filtrar por tipo">
+                <option value="todos">Todos los espacios</option>
+                <option value="naturaleza">Naturaleza</option>
+                <option value="silencio">Silencio</option>
+                <option value="social">Social</option>
+                <option value="interior">Interior</option>
+                </select>
+            </div>
+
+            <div class="space-grid" id="spaceGrid"></div>
+            <p class="empty-state hidden" id="spaceEmpty">No encontramos espacios con esos criterios.</p>
+            </section>
+
+            <!-- PAUSAS -->
+            <section class="page" id="page-pausas">
+            <div class="page-intro">
+                <span class="eyebrow">VUELVE A TU CENTRO</span>
+                <h1>Tu momento de pausa</h1>
+                <p>Unos minutos para relajar el cuerpo y despejar la mente.</p>
+            </div>
+
+            <div class="breathing-layout">
+                <article class="breathing-card">
+                <span class="eyebrow light">EJERCICIO GUIADO</span>
+                <h2>Respira a tu ritmo</h2>
+                <p>Busca una posición cómoda. Respira suavemente, sin forzar el aire.</p>
+
+                <div class="breathing-visual" id="breathingVisual">
+                    <div class="breathing-ring">
+                    <div class="breathing-circle">
+                        <span id="breathingEmoji">🌿</span>
+                        <strong id="breathingPhase">Preparado</strong>
+                        <small id="breathingCountdown">A tu ritmo</small>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="breathing-instruction" id="breathingInstruction" aria-live="polite">
+                    Pulsa iniciar cuando estés listo.
+                </div>
+
+                <div class="timer-settings">
+                    <label for="breathingDuration">Duración</label>
+                    <select id="breathingDuration">
+                    <option value="1">1 minuto</option>
+                    <option value="2" selected>2 minutos</option>
+                    <option value="3">3 minutos</option>
+                    <option value="5">5 minutos</option>
+                    </select>
+                </div>
+
+                <div class="button-row">
+                    <button class="button button-light" id="startBreathing">Comenzar</button>
+                    <button class="button button-outline-light" id="stopBreathing" disabled>Finalizar</button>
+                </div>
+                <p class="timer-note">Puedes detenerte en cualquier momento si sientes incomodidad.</p>
+                </article>
+
+                <div class="pause-side">
+                <article class="panel">
+                    <span class="eyebrow">OTRAS FORMAS DE DESCANSAR</span>
+                    <h3>Elige tu pausa</h3>
+                    <p>Selecciona una actividad breve.</p>
+                    <div class="pause-choice-list">
+                    <button class="pause-choice" data-exercise="estiramiento">
+                        <span class="choice-icon">🙆</span>
+                        <span><strong>Estiramiento suave</strong><small>Relaja hombros y cuello · 2 min</small></span>
+                        <span>→</span>
+                    </button>
+                    <button class="pause-choice" data-exercise="ojos">
+                        <span class="choice-icon">👀</span>
+                        <span><strong>Descanso visual</strong><small>Deja la pantalla por un momento · 1 min</small></span>
+                        <span>→</span>
+                    </button>
+                    <button class="pause-choice" data-exercise="gratitud">
+                        <span class="choice-icon">🌷</span>
+                        <span><strong>Momento de gratitud</strong><small>Piensa en algo positivo · 1 min</small></span>
+                        <span>→</span>
+                    </button>
+                    </div>
+                </article>
+
+                <article class="tip-card">
+                    <span>💡</span>
+                    <div><strong>Un consejo para ti</strong>
+                    <p>Si llevas mucho tiempo estudiando, levántate con cuidado, cambia de postura y descansa la vista.</p>
+                    </div>
+                </article>
+                </div>
+            </div>
+            </section>
+
+            <!-- ACTIVIDADES -->
+            <section class="page" id="page-actividades">
+            <div class="page-intro">
+                <span class="eyebrow">CONECTA Y PARTICIPA</span>
+                <h1>Actividades de bienestar</h1>
+                <p>Descubre propuestas para relajarte, aprender y compartir con otros estudiantes.</p>
+            </div>
+
+            <div class="notice">
+                <span>ⓘ</span>
+                <p>Estas actividades son ejemplos ficticios. Las inscripciones se guardan únicamente en este navegador y no se envían a la universidad.</p>
+            </div>
+
+            <div class="toolbar">
+                <label class="search-box">
+                <span>⌕</span>
+                <input type="search" id="eventSearch" placeholder="Buscar actividades..."
+                    aria-label="Buscar actividades">
+                </label>
+                <select id="eventFilter" aria-label="Filtrar actividades">
+                <option value="todos">Todas las categorías</option>
+                <option value="relajacion">Relajación</option>
+                <option value="movimiento">Movimiento</option>
+                <option value="comunidad">Comunidad</option>
+                <option value="creatividad">Creatividad</option>
+                </select>
+            </div>
+
+            <div class="event-grid" id="eventGrid"></div>
+            <p class="empty-state hidden" id="eventEmpty">No encontramos actividades con esos criterios.</p>
+            </section>
+
+            <!-- COMUNIDAD -->
+            <section class="page" id="page-comunidad">
+            <div class="page-intro">
+                <span class="eyebrow">CRECEMOS JUNTOS</span>
+                <h1>Comunidad HAVEN</h1>
+                <p>Pequeñas acciones pueden ayudarnos a construir una experiencia universitaria más amable.</p>
+            </div>
+
+            <div class="community-hero">
+                <div>
+                <span class="eyebrow light">UN CAMPUS MÁS HUMANO</span>
+                <h2>El bienestar también se construye en comunidad.</h2>
+                <p>Comparte ideas, encuentra inspiración y participa en iniciativas de bienestar.</p>
+                <button class="button button-light" data-page="actividades">Explorar actividades →</button>
+                </div>
+                <div class="community-emoji">🌱🤝🌼</div>
+            </div>
+
+            <div class="section-heading compact section-spaced">
+                <div><span class="eyebrow">IDEAS PARA COMPARTIR</span><h2>Iniciativas estudiantiles</h2></div>
+            </div>
+            <div class="initiative-grid">
+                <article class="initiative-card">
+                <span class="initiative-emoji">🌿</span>
+                <span class="tag">ENTORNO</span>
+                <h3>Campus más verde</h3>
+                <p>Promover plantas y espacios acogedores para disfrutar de momentos de tranquilidad.</p>
+                </article>
+                <article class="initiative-card">
+                <span class="initiative-emoji">🧘</span>
+                <span class="tag">BIENESTAR</span>
+                <h3>Pausas compartidas</h3>
+                <p>Organizar descansos breves entre clases para estirar el cuerpo y desconectar.</p>
+                </article>
+                <article class="initiative-card">
+                <span class="initiative-emoji">💬</span>
+                <span class="tag">CONVIVENCIA</span>
+                <h3>Escuchar sin juzgar</h3>
+                <p>Fomentar espacios de conversación respetuosa y apoyo entre compañeros.</p>
+                </article>
+            </div>
+
+            <div class="panel suggestion-panel">
+                <div>
+                <span class="eyebrow">TU VOZ IMPORTA</span>
+                <h2>¿Qué mejorarías de tu campus?</h2>
+                <p>Escribe una idea para hacer de la universidad un lugar más acogedor.</p>
+                </div>
+                <form id="ideaForm">
+                <label for="ideaInput">Tu propuesta</label>
+                <textarea id="ideaInput" maxlength="300" required
+                    placeholder="Me gustaría que existiera un espacio donde..."></textarea>
+                <div class="form-bottom">
+                    <small>Máximo 300 caracteres. Se guarda localmente.</small>
+                    <button class="button button-primary" type="submit">Guardar idea</button>
+                </div>
+                </form>
+            </div>
+            <div id="ideaList" class="idea-list"></div>
+            </section>
+
+            <!-- BIENESTAR -->
+            <section class="page" id="page-bienestar">
+            <div class="page-intro">
+                <span class="eyebrow">CONÓCETE UN POCO MÁS</span>
+                <h1>Mi bienestar</h1>
+                <p>Registra cómo te sientes y observa tus pequeños momentos de autocuidado.</p>
+            </div>
+
+            <div class="notice">
+                <span>♡</span>
+                <p>Este registro es privado en este navegador y no sustituye el acompañamiento de un profesional de salud.</p>
+            </div>
+
+            <div class="wellbeing-grid">
+                <article class="panel mood-form-panel">
+                <span class="eyebrow">REGISTRO DIARIO</span>
+                <h2>¿Cómo te sientes?</h2>
+                <p>Dedica un momento a identificar tus emociones.</p>
+
+                <form id="moodForm">
+                    <fieldset class="mood-fieldset">
+                    <legend>Elige la emoción que mejor te representa</legend>
+                    <div class="mood-picker">
+                        <label><input type="radio" name="mood" value="Muy bien" required><span>😁</span><small>Muy bien</small></label>
+                        <label><input type="radio" name="mood" value="Bien"><span>🙂</span><small>Bien</small></label>
+                        <label><input type="radio" name="mood" value="Regular"><span>😐</span><small>Regular</small></label>
+                        <label><input type="radio" name="mood" value="Triste"><span>😔</span><small>Triste</small></label>
+                        <label><input type="radio" name="mood" value="Estresado"><span>😣</span><small>Estresado</small></label>
+                    </div>
+                    </fieldset>
+
+                    <label for="moodNote">¿Quieres escribir algo sobre tu día? (opcional)</label>
+                    <textarea id="moodNote" maxlength="500"
+                    placeholder="Hoy me siento..."></textarea>
+                    <button class="button button-primary full-width" type="submit">Guardar mi registro</button>
+                </form>
+                <p class="form-feedback" id="moodFeedback" aria-live="polite"></p>
+                </article>
+
+                <div class="wellbeing-side">
+                <article class="wellbeing-summary">
+                    <span class="eyebrow light">TU PROGRESO</span>
+                    <h2>Pequeños pasos, grandes cambios.</h2>
+                    <div class="summary-number" id="wellbeingEntries">0</div>
+                    <p>Registros emocionales guardados</p>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row"><span>Minutos de pausa</span><strong id="wellbeingMinutes">0</strong></div>
+                    <div class="summary-row"><span>Actividades inscritas</span><strong id="wellbeingEvents">0</strong></div>
+                </article>
+                <article class="panel">
+                    <span class="eyebrow">RECUERDA</span>
+                    <h3>No tienes que sentirte bien todo el tiempo.</h3>
+                    <p>Reconocer lo que sientes puede ser un primer paso para cuidarte. Date permiso para descansar y pedir apoyo cuando lo necesites.</p>
+                </article>
+                </div>
+            </div>
+
+            <div class="section-heading compact section-spaced">
+                <div><span class="eyebrow">TU HISTORIAL</span><h2>Registros recientes</h2></div>
+                <button class="text-button" id="clearMoodHistory">Borrar historial</button>
+            </div>
+            <div id="moodHistory" class="history-list"></div>
+            </section>
+
+            <footer class="main-footer">
+            <span><strong>HAVEN</strong> · Un espacio para tu bienestar.</span>
+            <span>Proyecto demostrativo de bienestar universitario.</span>
+            </footer>
+        </div>
+        </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="bottom-nav-item active" data-page="inicio" aria-current="page">
+        <span class="bottom-nav-icon">⌂</span>
+        <span>Inicio</span>
+    </button>
+
+    <button class="bottom-nav-item" data-page="espacios">
+        <span class="bottom-nav-icon">⌖</span>
+        <span>Espacios</span>
+    </button>
+
+    <button class="bottom-nav-item" data-page="pausas">
+        <span class="bottom-nav-icon">◷</span>
+        <span>Pausas</span>
+    </button>
+
+    <button class="bottom-nav-item" data-page="actividades">
+        <span class="bottom-nav-icon">✳</span>
+        <span>Actividades</span>
+    </button>
+
+    <button class="bottom-nav-item" data-page="bienestar">
+        <span class="bottom-nav-icon">♡</span>
+        <span>Bienestar</span>
+    </button>
+    </nav>
+
+    <dialog class="detail-dialog" id="detailDialog">
+        <div id="dialogContent"></div>
+        <button class="dialog-close" id="dialogClose" aria-label="Cerrar ventana">✕</button>
+    </dialog>
+</body>
+</html>
